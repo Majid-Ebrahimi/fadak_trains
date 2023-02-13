@@ -1,5 +1,6 @@
+import 'package:fadak_trains/styles/elevation_styles.dart';
+import 'package:fadak_trains/styles/text_styles.dart';
 import 'package:fadak_trains/util/colors.dart';
-import 'package:fadak_trains/styles/text_style.dart';
 import 'package:flutter/material.dart';
 
 class LoginOTP1 extends StatefulWidget {
@@ -20,8 +21,19 @@ class _LoginOTP1State extends State<LoginOTP1> {
         ),
         alignment: Alignment.center,
         // color: Colors.white,
-        child: Text("قطارهای 5 ستاره فدک",
-            style: CustomTextStyle.display()),
+        child: Container(
+          alignment: Alignment.center,
+          width: 300,
+          height: 100,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: CustomBoxShadow.shadow24dp,
+          ),
+          child: Text(
+            "CAPTION BOLD",
+            style: CustomTextStyle.captionBold(),
+          ),
+        ),
       ),
     );
   }
@@ -39,7 +51,8 @@ PreferredSizeWidget loginSignupAppBar(String title) {
       onPressed: () {},
       splashRadius: 25.0,
     ),
-    title: Text(title, style: CustomTextStyle.bodyBold(color: CustomColor.neutral70)),
+    title: Text(title,
+        style: CustomTextStyle.bodyBold(color: CustomColor.neutral70)),
     centerTitle: true,
   );
 }

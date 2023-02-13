@@ -2,6 +2,7 @@ import 'package:fadak_trains/util/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextStyle {
+
   //Constructor
   CustomTextStyle();
   ///////////////////////////////////////////////
@@ -106,6 +107,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 16.0,
     double height = 0.5, //25px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -114,6 +116,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -126,6 +129,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 16.0,
     double height = 0.5, //25px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -134,6 +138,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -148,6 +153,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 13.0,
     double height = 0.42, //21px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -156,6 +162,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -168,6 +175,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 13.0,
     double height = 0.42, //21px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -176,6 +184,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -190,6 +199,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 10.0,
     double height = 0.32, //16px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -198,6 +208,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -210,6 +221,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 10.0,
     double height = 0.32, //16px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -218,6 +230,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -232,6 +245,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 9.0,
     double height = 0.32, //16px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -240,6 +254,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -252,6 +267,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 9.0,
     double height = 0.32, //16px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -260,6 +276,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
@@ -272,6 +289,7 @@ class CustomTextStyle {
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 7.0,
     double height = 0.24, //12px
+    double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
     TextStyle temp = TextStyle(
@@ -280,6 +298,7 @@ class CustomTextStyle {
       fontWeight: fontWeight,
       fontSize: fontSize,
       height: height,
+      letterSpacing: letterSpacing,
       color: color,
     );
     return temp;
