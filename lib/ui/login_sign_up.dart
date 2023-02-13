@@ -20,7 +20,7 @@ class _LoginOTP1State extends State<LoginOTP1> {
         ),
         alignment: Alignment.center,
         // color: Colors.white,
-        child: Text("قطارهای 5 ستاره فدک",
+        child: Text("قطارهای  ستاره فدک",
             style: CustomTextStyle.display()),
       ),
     );
