@@ -1,4 +1,3 @@
-import 'package:fadak_trains/styles/elevation_styles.dart';
 import 'package:fadak_trains/styles/text_styles.dart';
 import 'package:fadak_trains/util/colors.dart';
 import 'package:flutter/material.dart';
@@ -14,45 +13,82 @@ class _LoginOTP1State extends State<LoginOTP1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: loginSignupAppBar("ورود"),
+      // appBar: loginSignupAppBar(context, "ورود"),
       body: Container(
         decoration: const BoxDecoration(
           color: CustomColor.neutral000,
         ),
         alignment: Alignment.center,
-        // color: Colors.white,
-        child: Container(
-          alignment: Alignment.center,
-          width: 300,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: CustomBoxShadow.shadow24dp,
-          ),
-          child: Text(
-            "CAPTION BOLD",
-            style: CustomTextStyle.captionBold(),
-          ),
+        child: Column(
+          children: [
+            loginSignupToolBar(context, "ورود"),
+          ],
         ),
       ),
     );
   }
 }
 
-PreferredSizeWidget loginSignupAppBar(String title) {
+PreferredSizeWidget loginSignupAppBar(BuildContext context, String title) {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0.0,
+    toolbarTextStyle: CustomTextStyle.bodyBold(color: CustomColor.neutral70),
     leading: IconButton(
-      icon: const Icon(
+      padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.shortestSide / 23.41,
+          horizontal: MediaQuery.of(context).size.shortestSide / 27.41),
+      icon: Icon(
         Icons.close,
         color: CustomColor.neutral40,
+        size: MediaQuery.of(context).size.shortestSide / 13.18,
       ),
       onPressed: () {},
       splashRadius: 25.0,
     ),
-    title: Text(title,
-        style: CustomTextStyle.bodyBold(color: CustomColor.neutral70)),
+    title: Padding(
+      padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.longestSide / 19),
+      child: Text(
+        title,
+        style: CustomTextStyle.bodyBold(color: CustomColor.neutral70),
+      ),
+    ),
     centerTitle: true,
+  );
+}
+
+Widget loginSignupToolBar(BuildContext context, String title) {
+  return Container(
+    margin: EdgeInsets.only(top:  MediaQuery.of(context).size.shortestSide * 0.077,),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: MediaQuery.of(context).size.shortestSide * 0.0293),
+          child: Material(
+            borderRadius: BorderRadius.circular(50.0),
+            color: Colors.white10,
+            child: IconButton(
+              onPressed: () {},
+              splashRadius: MediaQuery.of(context).size.shortestSide * 0.06,
+              icon: Icon(
+                Icons.close,
+                color: CustomColor.neutral40,
+                size: MediaQuery.of(context).size.shortestSide * 0.0615,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 10.0,right: 175.0),
+          child:
+          Text(
+            title,
+            style: CustomTextStyle.bodyBold(color: CustomColor.neutral70),
+          ),
+        ),
+      ],
+    ),
   );
 }
