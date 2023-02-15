@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../styles/text_styles.dart';
 import '../util/colors.dart';
 
@@ -18,6 +17,11 @@ class Components {
     double? toolbarHeight,
     double? toolbarWidth
   }) {
+    double titleMargin = MediaQuery.of(context).size.width * 0.11;
+    if(MediaQuery.of(context).orientation == Orientation.landscape){
+      //TODO
+      titleMargin = MediaQuery.of(context).size.width * 0.16;
+    }
     double iconBoxSize = MediaQuery.of(context).size.shortestSide * 0.1;
     double iconsSize = MediaQuery.of(context).size.shortestSide * 0.0615;
     return Container(
@@ -65,7 +69,7 @@ class Components {
           Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.11,
+              left: titleMargin,
               top: MediaQuery.of(context).size.shortestSide * 0.01,
             ),
             width: MediaQuery.of(context).size.width * 0.5,
@@ -75,8 +79,10 @@ class Components {
               style: CustomTextStyle.bodyBold(color: CustomColor.neutral70),
             ),
           ),
+
         ],
       ),
     );
   }
+
 }
