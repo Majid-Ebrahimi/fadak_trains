@@ -25,16 +25,7 @@ class _LoginOTP1State extends State<LoginOTP1> {
               child: ListView(
                 children: [
                   const Center(child: Text("شماره خود را وارد کنید")),
-                  const TextField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: CustomColor.neutral100, width: 3.0),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 3.0),
-                      ),
-                      hintText: 'Mobile Number',                    ),
-                  ),
+                  Components.textInput(),
                   ElevatedButton(onPressed: (){}, child: const Text("تایید و دریافت کد")),
                   TextButton(onPressed: (){}, child: const Text("ورود با رمز موقت"))
                 ],
