@@ -14,7 +14,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 39.0,
-    double height = 1.2, //60px
+    double? height = 1.2, //60px
     double letterSpacing = -1.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -38,7 +38,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 31.0,
-    double height = 0.94, //47px
+    double? height = 0.94, //47px
     double letterSpacing = -2.5,
     Color color = CustomColor.neutral100,
   }) {
@@ -60,7 +60,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 25.0,
-    double height = 0.8, //40px
+    double? height = 0.8, //40px
     double letterSpacing = -1.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -82,7 +82,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 20.0,
-    double height = 0.7, //35px
+    double? height = 0.7, //35px
     double letterSpacing = -1.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -106,7 +106,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 16.0,
-    double height = 0.5, //25px
+    double? height = 0.5, //25px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -128,7 +128,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 16.0,
-    double height = 0.5, //25px
+    double? height = 0.5, //25px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -152,7 +152,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 13.0,
-    double height = 0.42, //21px
+    double? height = 0.42, //21px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -174,7 +174,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 13.0,
-    double height = 0.42, //21px
+    double? height = 0.42, //21px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -198,7 +198,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 10.0,
-    double height = 0.32, //16px
+    double? height = 0.32, //16px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -220,7 +220,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 10.0,
-    double height = 0.32, //16px
+    double? height = 0.32, //16px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -244,7 +244,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w700,
     double fontSize = 9.0,
-    double height = 0.32, //16px
+    double? height = 0.32, //16px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -266,7 +266,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 9.0,
-    double height = 0.32, //16px
+    double? height = 0.32, //16px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
@@ -288,7 +288,7 @@ class CustomTextStyle {
     FontStyle fontStyle = FontStyle.normal,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = 7.0,
-    double height = 0.24, //12px
+    double? height = 0.24, //12px
     double letterSpacing = 0.0,
     Color color = CustomColor.neutral100,
   }) {
