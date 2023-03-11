@@ -34,5 +34,5 @@ double spacingXMedium = 8;
 double spacingMiddle = 10;
 double spacingXMiddle = 13;
 double spacingXXMiddle = 15;
-double spacingXXXMiddle = 20;
+double spacingXXXMiddle = 21;
 double spacingLarge = 25;

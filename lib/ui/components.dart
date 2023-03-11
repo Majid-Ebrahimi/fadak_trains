@@ -1,22 +1,24 @@
-import 'package:fadak_trains/styles/size.dart';
 import 'package:flutter/material.dart';
 
+import '../styles/size.dart';
 import '../styles/text_styles.dart';
 import '../util/colors.dart';
 
 //LoginSignUp toolbar
 //implement a toolbar as a widget that you can change parameters you want and Customize it
-Widget toolbar(
-    {
-    required BuildContext context,
-    required String title,
-    bool hasLead = false,
-    bool hasAction = false,
-    Color toolbarColor = CustomColor.neutral000,
-    Color iconsColor = CustomColor.neutral40,
-    double? toolbarHeight,
-    double? toolbarWidth,
-    }) {
+Widget toolbar({
+  required BuildContext context,
+  required String title,
+  IconData? lead,
+  //TODO Create an Action
+  IconData? action,
+  bool hasAction = false,
+  Color toolbarColor = CustomColor.neutral000,
+  Color iconsColor = CustomColor.neutral40,
+  double? toolbarHeight,
+  double? toolbarWidth,
+}) {
+  //TODO Fix The Sizes
   double titleMargin = MediaQuery.of(context).size.width * 0.11;
   if (MediaQuery.of(context).orientation == Orientation.landscape) {
     //TODO
@@ -38,7 +40,13 @@ Widget toolbar(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         //lead
-        if (hasLead)
+        if (lead == null)
+          Container(
+            width: iconBoxSize,
+            height: iconBoxSize,
+            decoration: const BoxDecoration(shape: BoxShape.circle),
+          )
+        else
           Material(
             shape: const CircleBorder(),
             child: InkWell(
@@ -49,18 +57,12 @@ Widget toolbar(
                 height: iconBoxSize,
                 decoration: const BoxDecoration(shape: BoxShape.circle),
                 child: Icon(
-                  Icons.close,
+                  lead,
                   color: iconsColor,
                   size: iconsSize,
                 ),
               ),
             ),
-          )
-        else
-          Container(
-            width: iconBoxSize,
-            height: iconBoxSize,
-            decoration: const BoxDecoration(shape: BoxShape.circle),
           ),
         /////////////////////////////////////////
 
@@ -116,15 +118,14 @@ Widget textInput({
   EdgeInsetsGeometry? margin,
   var maxLine,
 }) {
-
-  double borderSideWidth = 0.75;
+  double borderSideWidth = 0.5;
   double textInputHeight = 35;
 
   return Container(
     constraints: boxConstraints,
-    width: sizeConvertorWidth(context, width!),
+    // width: sizeConvertorWidth(context, width!),
     margin: margin,
-    height: sizeConvertorLongestSide(context, textInputHeight),
+    // height: sizeConvertorHeight(context, textInputHeight),
     child: TextField(
       expands: expands,
       maxLines: maxLine,
@@ -160,6 +161,21 @@ Widget textInput({
       maxLength: maxLength,
       cursorHeight: cursorHeight,
       style: textStyle,
+      // clipBehavior: Clip.antiAliasWithSaveLayer,
+    ),
+  );
+}
+
+
+
+//the title of TextInput
+Widget textInputTitle(String text) {
+  return Padding(
+    padding: EdgeInsets.only(top: spacingXXXMiddle, bottom: spacingXMiddle,left: spacingXMedium,right: spacingXMedium),
+    child: Text(
+      text,
+      style: CustomTextStyle.buttonRegular(color: CustomColor.neutral70),
+      textDirection: TextDirection.rtl,
     ),
   );
 }
