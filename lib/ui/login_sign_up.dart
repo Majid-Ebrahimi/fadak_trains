@@ -13,7 +13,29 @@ class LoginOTP1 extends StatefulWidget {
 
 class _LoginOTP1State extends State<LoginOTP1> {
   String _value = '';
-  bool _isButtonEnabled = false;
+  bool isEnableButton = false;
+  final textInputControllerPhoneNumber = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    //Conditions of enable or disable button
+    textInputControllerPhoneNumber.addListener(() {
+      setState(() {
+        if (textInputControllerPhoneNumber.text.length >= 11 &&
+            textInputControllerPhoneNumber.text.characters.first == '0') {
+          isEnableButton = true;
+        } else {
+          isEnableButton = false;
+        }
+      });
+    });
+    /////////////////////////////////////////////////////////////////
+  }
+
+//-----------
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +68,19 @@ class _LoginOTP1State extends State<LoginOTP1> {
                   //TODO
                   //_value.length == 11? _isButtonEnabled = true : _isButtonEnabled = false;
                 },
+                controller: textInputControllerPhoneNumber,
                 boxConstraints: const BoxConstraints(
-                  minHeight: 20,
+                  minHeight: 25,
                   minWidth: 50,
                   maxHeight: 45,
-                  maxWidth: 400,
+                  maxWidth: 450,
                 ),
-                //TODO Fix Dimens
-                margin: EdgeInsets.symmetric(
-                    horizontal: 64, vertical: spacingXMedium),
+                margin: const EdgeInsets.symmetric(
+                    horizontal: spacingXLarge, vertical: spacingXMedium),
                 hintText: 'شماره موبایل',
                 hintTextStyle: CustomTextStyle.aaBold(
                   color: CustomColor.neutral30,
-                  height: null,
+                  // height: null,
                 ),
                 textStyle: CustomTextStyle.aaBold(
                   color: CustomColor.neutral50,
@@ -67,17 +89,32 @@ class _LoginOTP1State extends State<LoginOTP1> {
                 ),
               ),
               const Spacer(),
-              ElevatedButton(
-                onPressed: _isButtonEnabled ? () {} : null,
+              rectangleButton(
                 child: const Text("تایید و دریافت کد"),
+                onPressed: isEnableButton ? () {} : null,
+                margin: const EdgeInsets.symmetric(horizontal: spacingSmLarge),
+                constraints: const BoxConstraints(
+                  minHeight: 25,
+                  minWidth: 65,
+                  maxHeight: 45,
+                  maxWidth: 600,
+                ),
               ),
               TextButton(
-                  onPressed: () {}, child: const Text("ورود با رمز موقت")),
+                onPressed: () {},
+                child: Text(
+                  "ورود با کلمه عبور",
+                  style: CustomTextStyle.buttonRegular(
+                    color: CustomColor.gradientBlue,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
 
 }
