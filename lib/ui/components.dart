@@ -87,13 +87,14 @@ Widget toolbar({
 
 //Main textInput
 //Base TextInput Style that have many parameters, you can change parameters you want and customize it
+//TODO refactor all of parameters
 Widget textInput({
   required BuildContext context,
   double? width,
   double? height,
   double? focusBorderSideWidth,
   double? enabledBorderSideWidth,
-  double borderRadius = 4.0,
+  double borderRadius = radiusSmall,
   Color focusBorderColor = CustomColor.neutral100,
   Color enabledBorderColor = CustomColor.neutral40,
   BorderStyle borderStyle = BorderStyle.solid,
@@ -102,7 +103,7 @@ Widget textInput({
   TextDirection hintTextDirection = TextDirection.rtl,
   TextStyle? hintTextStyle,
   TextAlign textAlign = TextAlign.right,
-  Function(String)? onChanged,
+  required dynamic Function(String) onChanged,
   TextInputType? textInputType = TextInputType.number,
   int? maxLength = 11,
   TextStyle? textStyle,
@@ -115,20 +116,21 @@ Widget textInput({
   BoxConstraints? boxConstraints,
   Color? suffixIconColor = CustomColor.neutral70,
   Icon? suffixIcon,
+  TextEditingController? controller,
   EdgeInsetsGeometry? margin,
   var maxLine,
 }) {
   double borderSideWidth = 0.5;
-  double textInputHeight = 35;
 
   return Container(
     constraints: boxConstraints,
-    // width: sizeConvertorWidth(context, width!),
+    width: double.infinity,
     margin: margin,
-    // height: sizeConvertorHeight(context, textInputHeight),
+    height: sizeMXLarge,
     child: TextField(
       expands: expands,
       maxLines: maxLine,
+      controller: controller,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         suffixIconColor: suffixIconColor,
@@ -166,12 +168,60 @@ Widget textInput({
   );
 }
 
-
+//the
+Widget rectangleButton({
+  required Widget child,
+  required void Function()? onPressed,
+  EdgeInsetsGeometry? margin,
+  double? width = double.infinity,
+  double? height = sizeMXLarge,
+  BoxConstraints? constraints,
+  AlignmentGeometry? alignment = Alignment.center,
+  Color? backgroundColor = CustomColor.gradientBlue,
+  Color? foregroundColor = CustomColor.neutral000,
+  Color? disableForegroundColor = CustomColor.neutral000,
+  Color? disableBackgroundColor = CustomColor.neutral40,
+  double elevation = 0.0,
+  EdgeInsetsGeometry? padding = const EdgeInsets.symmetric(
+    vertical: spacingSmall,
+    horizontal: spacingLarge,
+  ),
+}) {
+  TextStyle? textStyle = CustomTextStyle.bodyRegular();
+  return Container(
+    margin: margin,
+    width: width,
+    height: height,
+    constraints: constraints,
+    child: ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusSmall),
+        ),
+        alignment: alignment,
+        backgroundColor: backgroundColor,
+        foregroundColor: foregroundColor,
+        disabledForegroundColor: disableForegroundColor,
+        disabledBackgroundColor: disableBackgroundColor,
+        elevation: elevation,
+        textStyle: textStyle,
+        padding: padding,
+      ),
+      child: child,
+    ),
+  );
+}
 
 //the title of TextInput
 Widget textInputTitle(String text) {
   return Padding(
-    padding: EdgeInsets.only(top: spacingXXXMiddle, bottom: spacingXMiddle,left: spacingXMedium,right: spacingXMedium),
+    padding: const EdgeInsets.only(
+      top: spacingXXXMiddle,
+      bottom: spacingXMiddle,
+      left: spacingXMedium,
+      right: spacingXMedium,
+    ),
     child: Text(
       text,
       style: CustomTextStyle.buttonRegular(color: CustomColor.neutral70),
