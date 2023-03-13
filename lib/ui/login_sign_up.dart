@@ -51,66 +51,149 @@ class _LoginOTP1State extends State<LoginOTP1> {
           onTap: () {
             FocusScope.of(context).requestFocus(FocusNode());
           },
-/////////////////////////////////////////////////////////////////////
-          child: Column(
-            children: [
-              // toolbar(
-              //   context: context,
-              //   title: "ورود",
-              //   lead: Icons.close_rounded,
-              // ),
-              textInputTitle(
-                "برای ادامه، شماره همراه خود را وارد کنید.",
+          //TODO Fix THIS Bullshit
+          child: MediaQuery.of(context).size.height <= 400
+              ? _normalView()
+              : _smallView(),
+        ),
+      ),
+    );
+  }
+
+  //TODO Fix THIS Bullshit
+  Widget _smallView() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          children: [
+            textInputTitle(
+              "برای ادامه، شماره همراه خود را وارد کنید.",
+            ),
+            textInput(
+              context: context,
+              onChanged: (number) {
+                _value = number;
+                //TODO
+              },
+              controller: textInputControllerPhoneNumber,
+              boxConstraints: const BoxConstraints(
+                minHeight: 25,
+                minWidth: 50,
+                maxHeight: 45,
+                maxWidth: 450,
               ),
-              textInput(
-                context: context,
-                onChanged: (number) {
-                  _value = number;
-                  //TODO
-                },
-                controller: textInputControllerPhoneNumber,
-                boxConstraints: const BoxConstraints(
-                  minHeight: 25,
-                  minWidth: 50,
-                  maxHeight: 45,
-                  maxWidth: 450,
-                ),
-                margin: const EdgeInsets.symmetric(
-                    horizontal: spacingXLarge, vertical: spacingXMedium),
-                hintText: 'شماره موبایل',
-                hintTextStyle: CustomTextStyle.aaBold(
-                  color: CustomColor.neutral30,
-                  // height: null,
-                ),
-                textStyle: CustomTextStyle.aaBold(
-                  color: CustomColor.neutral50,
-                  fontSize: 16,
-                  height: null,
+              margin: const EdgeInsets.symmetric(
+                  horizontal: spacingXLarge, vertical: spacingXMedium),
+              hintText: 'شماره موبایل',
+              hintTextStyle: CustomTextStyle.aaBold(
+                color: CustomColor.neutral30,
+                // height: null,
+              ),
+              textStyle: CustomTextStyle.aaBold(
+                color: CustomColor.neutral50,
+                fontSize: 16,
+                height: null,
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            rectangleButton(
+              child: const Text("تایید و دریافت کد"),
+              onPressed: isEnableButton ? () {} : null,
+              margin: const EdgeInsets.symmetric(horizontal: spacingSmLarge),
+              constraints: const BoxConstraints(
+                minHeight: 25,
+                minWidth: 65,
+                maxHeight: 45,
+                maxWidth: 600,
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "ورود با کلمه عبور",
+                style: CustomTextStyle.buttonRegular(
+                  color: CustomColor.gradientBlue,
                 ),
               ),
-              const Spacer(),
-              rectangleButton(
-                child: const Text("تایید و دریافت کد"),
-                onPressed: isEnableButton ? () {} : null,
-                margin: const EdgeInsets.symmetric(horizontal: spacingSmLarge),
-                constraints: const BoxConstraints(
-                  minHeight: 25,
-                  minWidth: 65,
-                  maxHeight: 45,
-                  maxWidth: 600,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  //TODO Fix THIS Bullshit
+  Widget _normalView() {
+    return SingleChildScrollView(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height -
+            (AppBar().preferredSize.height + 25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                textInputTitle(
+                  "برای ادامه، شماره همراه خود را وارد کنید.",
                 ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "ورود با کلمه عبور",
-                  style: CustomTextStyle.buttonRegular(
-                    color: CustomColor.gradientBlue,
+                textInput(
+                  context: context,
+                  onChanged: (number) {
+                    _value = number;
+                    //TODO
+                  },
+                  controller: textInputControllerPhoneNumber,
+                  boxConstraints: const BoxConstraints(
+                    minHeight: 25,
+                    minWidth: 50,
+                    maxHeight: 45,
+                    maxWidth: 450,
+                  ),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: spacingXLarge, vertical: spacingXMedium),
+                  hintText: 'شماره موبایل',
+                  hintTextStyle: CustomTextStyle.aaBold(
+                    color: CustomColor.neutral30,
+                    // height: null,
+                  ),
+                  textStyle: CustomTextStyle.aaBold(
+                    color: CustomColor.neutral50,
+                    fontSize: 16,
+                    height: null,
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
+            Column(
+              children: [
+                rectangleButton(
+                  child: const Text("تایید و دریافت کد"),
+                  onPressed: isEnableButton ? () {} : null,
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: spacingSmLarge),
+                  constraints: const BoxConstraints(
+                    minHeight: 25,
+                    minWidth: 65,
+                    maxHeight: 45,
+                    maxWidth: 600,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "ورود با کلمه عبور",
+                    style: CustomTextStyle.buttonRegular(
+                      color: CustomColor.gradientBlue,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
