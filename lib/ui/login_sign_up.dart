@@ -40,6 +40,7 @@ class _LoginOTP1State extends State<LoginOTP1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: loginSignupAppBar(title: 'ورود'),
       body: Container(
         decoration: const BoxDecoration(
           color: CustomColor.neutral000,
@@ -53,11 +54,11 @@ class _LoginOTP1State extends State<LoginOTP1> {
 /////////////////////////////////////////////////////////////////////
           child: Column(
             children: [
-              toolbar(
-                context: context,
-                title: "ورود",
-                lead: Icons.close_rounded,
-              ),
+              // toolbar(
+              //   context: context,
+              //   title: "ورود",
+              //   lead: Icons.close_rounded,
+              // ),
               textInputTitle(
                 "برای ادامه، شماره همراه خود را وارد کنید.",
               ),
@@ -66,7 +67,6 @@ class _LoginOTP1State extends State<LoginOTP1> {
                 onChanged: (number) {
                   _value = number;
                   //TODO
-                  //_value.length == 11? _isButtonEnabled = true : _isButtonEnabled = false;
                 },
                 controller: textInputControllerPhoneNumber,
                 boxConstraints: const BoxConstraints(
@@ -116,5 +116,21 @@ class _LoginOTP1State extends State<LoginOTP1> {
     );
   }
 
-
+  AppBar loginSignupAppBar({required String title}) {
+    return AppBar(
+      title: Text(
+        title,
+        style: CustomTextStyle.bodyBold(color: CustomColor.neutral70),
+      ),
+      centerTitle: true,
+      backgroundColor: CustomColor.neutral000,
+      elevation: 0.0,
+      leading: IconButton(
+        icon: const Icon(Icons.close_rounded),
+        color: CustomColor.neutral40,
+        onPressed: () {},
+        splashRadius: Material.defaultSplashRadius / 2,
+      ),
+    );
+  }
 }
